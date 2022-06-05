@@ -13,8 +13,8 @@ export class SubmitFeedbackUseCase {
     private mailAdapter: MailAdapter
   ) {}
 
-  async execute(request: SubmitFeedbackUseCaseRequest) {
-    const { type, comment, screenshot } = request;
+  async execute({ type, comment, screenshot }: SubmitFeedbackUseCaseRequest) {
+   
 
     if (!type) {
       throw new Error("Type is required.");
